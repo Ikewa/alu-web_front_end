@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="firstname">
+    <input type="email" id="email">
+    <button onclick="setCookies()">Log me in</button>
+    <button onclick="showCookies()">Show the cookies</button>
+    <div id="cookieDisplay"></div>
+    <script>
+      function setCookies() {
+      const firstname = document.getElementById('firstname').value;
+      const email = document.getElementById('email').value;
+      
+      
+      document.cookie = `firstname=${firstname}; path=/`;
+      document.cookie = `email=${email}; path=/`;
+
+      alert("Cookies have been set!");
+    }
+
+    
+    function showCookies() {
+      const cookies = document.cookie;
+      const cookieDisplay = document.getElementById('cookieDisplay');
+      
+      
+      const p = document.createElement('p');
+      p.innerHTML = `Cookies: ${cookies}`;
+      
+     
+      cookieDisplay.innerHTML = ''; 
+      cookieDisplay.appendChild(p);
+    }
+        
+    </script>
+   
+</body>
+</html>
